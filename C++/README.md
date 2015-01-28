@@ -23,6 +23,10 @@ Unix系OSにてビルドすることを想定している。
 
 	%./source/LifeGame
 
+
+実行すると以下のような画面となる。　　
+![](./img_LifeGame.png)
+
 このLifeGameは[curses](http://ja.wikipedia.org/wiki/Curses)を利用している。  
 このLifeGame内でのコマンドを以下に示す。  
 
@@ -36,9 +40,6 @@ Unix系OSにてビルドすることを想定している。
 	l: カーソルを右へ移動
 
 	※カーソルの移動はviと同じ
-
-実行すると以下のような画面となる。　　
-![](./img_LifeGame.png)
 
 
 ##プログラムソース
