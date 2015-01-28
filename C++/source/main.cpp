@@ -3,7 +3,7 @@
  * @brief   ライフゲームのmain関数.
  */
 #include <stdio.h>
-#include <time.h>
+#include <unistd.h>
 
 #include "./View/LifeGameDisplayOnCurses.h"
 
