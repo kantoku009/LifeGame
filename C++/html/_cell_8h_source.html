@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 
-<title>srcs/Model/Cell.h Source File</title>
+<title>source/Model/Cell.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 
@@ -54,7 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">srcs/Model/Cell.h</div>  </div>
+<div class="title">source/Model/Cell.h</div>  </div>
 </div>
 <div class="contents">
 <a href="_cell_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
@@ -62,87 +62,85 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#define __CELL_H__</span>
 <a name="l00008"></a>00008 <span class="preprocessor"></span>
 <a name="l00009"></a>00009 <span class="preprocessor">#include &quot;../Lib/Observer.h&quot;</span>
-<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="_cell_attribute_8h.html" title="細胞（セル）の属性情報クラス.">CellAttribute.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;../Lib/CellAttribute.h&quot;</span>
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="comment">// クラスの前方宣言.</span>
-<a name="l00013"></a>00013 <span class="keyword">class </span><a class="code" href="class_matrix_cell.html" title="全細胞（全セル）を管理するクラス.">MatrixCell</a>;
-<a name="l00014"></a>00014 
-<a name="l00018"></a><a class="code" href="class_cell.html">00018</a> <span class="keyword">class </span><a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a> : <span class="keyword">public</span> <a class="code" href="class_subject.html" title="デザインパターン(オブザーバーパターン) Subject">Subject</a>
-<a name="l00019"></a>00019 {
-<a name="l00020"></a>00020 <span class="keyword">public</span>:
-<a name="l00030"></a><a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdb">00030</a>     <span class="keyword">enum</span> <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdb" title="隣接セルの方向と番号の定義.">NEIGHBOR_POSITION</a>
-<a name="l00031"></a>00031     {
-<a name="l00032"></a><a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba5c3cb113aaffc922baf42e37820b051f">00032</a>         <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba289c4730de909f6d65e9498e87e879d7">TOP_LEFT</a>=0,     <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdbad8f38cfcffa33cc59f2d6c1a0b105836">TOP_MIDDLE</a>,     <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba5c3cb113aaffc922baf42e37820b051f">TOP_RIGHT</a>, 
-<a name="l00033"></a><a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba8d6dea6b72bf9423d77369613e653cae">00033</a>         <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba5c7f6512b3a5e2f02b43990823a5a8cc">LEFT</a>,                           <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba8d6dea6b72bf9423d77369613e653cae">RIGHT</a>,
-<a name="l00034"></a><a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdbae304d2970cd4b7e9c26f2a05510f2d00">00034</a>         <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdbaca76cab0fc5b23527b44ee8f31d988a6">BOTTOM_LEFT</a>,    <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba80d739d1f9aacc32027a791571475490">BOTTOM_MIDDLE</a>,  <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdbae304d2970cd4b7e9c26f2a05510f2d00">BOTTOM_RIGHT</a>,
-<a name="l00035"></a><a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba85ef0f4b72c2c143f9d3a082e6a6bd51">00035</a>         <a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba85ef0f4b72c2c143f9d3a082e6a6bd51">NEIGHBOR_MAX</a>
-<a name="l00036"></a>00036     };
-<a name="l00037"></a>00037 
-<a name="l00043"></a>00043     <a class="code" href="class_cell.html#ac5fcc4178299ae24d3736d2955478fea" title="コンストラクタ.">Cell</a>(<span class="keywordtype">long</span> i_lCol, <span class="keywordtype">long</span> i_lRow);
-<a name="l00044"></a>00044 
-<a name="l00048"></a>00048     <span class="keyword">virtual</span> <a class="code" href="class_cell.html#a9fa559f7a28e2b4336c6879ca09304d8" title="デストラクタ.">~Cell</a>();
-<a name="l00049"></a>00049 
-<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="class_cell.html#a6c2f01a0a781010cc7ae39b72d0be9c7" title="初期化.">init</a>(<span class="keywordtype">long</span> i_lCol, <span class="keywordtype">long</span> i_lRow);
-<a name="l00057"></a>00057 
-<a name="l00063"></a><a class="code" href="class_cell.html#a073262be9384000e6d9c41a179a3345a">00063</a>     <span class="keywordtype">void</span> <a class="code" href="class_cell.html#a073262be9384000e6d9c41a179a3345a" title="セルの座標位置(横方向)を設定.">setCol</a>(<span class="keywordtype">long</span> i_lCol)
-<a name="l00064"></a>00064     {
-<a name="l00065"></a>00065         <a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>.<a class="code" href="class_cell_attribute.html#a300dedb330ba4c99b4971fa3ed1a354e" title="座標位置（横方向）を設定.">setCol</a>(i_lCol);
-<a name="l00066"></a>00066     }
-<a name="l00067"></a>00067 
-<a name="l00073"></a><a class="code" href="class_cell.html#ac9d768f562137605a7248e8a55080bc2">00073</a>     <span class="keywordtype">long</span> <a class="code" href="class_cell.html#ac9d768f562137605a7248e8a55080bc2" title="セルの座標位置(横方向)を取得.">getCol</a>()<span class="keyword"> const</span>
-<a name="l00074"></a>00074 <span class="keyword">    </span>{
-<a name="l00075"></a>00075         <span class="keywordflow">return</span> (<a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>.<a class="code" href="class_cell_attribute.html#aa42211417eaf77b831d5f80f7d33c5ff" title="座標位置（横方向）を取得.">getCol</a>());
-<a name="l00076"></a>00076     }
-<a name="l00077"></a>00077 
-<a name="l00083"></a><a class="code" href="class_cell.html#ab3572488a9b082ab44f584db1ce8d941">00083</a>     <span class="keywordtype">void</span> <a class="code" href="class_cell.html#ab3572488a9b082ab44f584db1ce8d941" title="セルの座標位置(縦方向)を設定.">setRow</a>(<span class="keywordtype">long</span> i_lRow)
-<a name="l00084"></a>00084     {
-<a name="l00085"></a>00085         <a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>.<a class="code" href="class_cell_attribute.html#ae30e339c8f08b7854f45ad2402db1437" title="座標位置（縦方向）を設定.">setRow</a>(i_lRow);
-<a name="l00086"></a>00086     }
+<a name="l00015"></a><a class="code" href="class_cell.html">00015</a> <span class="keyword">class </span><a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a> : <span class="keyword">public</span> <a class="code" href="class_subject.html" title="デザインパターン(オブザーバーパターン) Subject">Subject</a>, <a class="code" href="class_observer.html" title="デザインパターン(オブザーバーパターン) Observer">Observer</a>
+<a name="l00016"></a>00016 {
+<a name="l00017"></a>00017 <span class="keyword">public</span>:
+<a name="l00018"></a>00018 
+<a name="l00022"></a><a class="code" href="class_cell.html#a394510643e8664cf12b5efaf5cb99f71">00022</a>     <a class="code" href="class_cell.html#a394510643e8664cf12b5efaf5cb99f71" title="コンストラクタ.">Cell</a>()
+<a name="l00023"></a>00023         {
+<a name="l00024"></a>00024                 this-&gt;<a class="code" href="class_cell.html#a943c88a8f6038a52115ab803a458d4d3" title="初期化.">init</a>();
+<a name="l00025"></a>00025         }
+<a name="l00026"></a>00026 
+<a name="l00030"></a><a class="code" href="class_cell.html#a1e6408c1546e13a9e91a291867f43eec">00030</a>     <span class="keyword">virtual</span> <a class="code" href="class_cell.html#a1e6408c1546e13a9e91a291867f43eec" title="デストラクタ.">~Cell</a>() { }
+<a name="l00031"></a>00031 
+<a name="l00037"></a><a class="code" href="class_cell.html#a943c88a8f6038a52115ab803a458d4d3">00037</a>     <span class="keywordtype">void</span> <a class="code" href="class_cell.html#a943c88a8f6038a52115ab803a458d4d3" title="初期化.">init</a>()
+<a name="l00038"></a>00038         {
+<a name="l00039"></a>00039                 this-&gt;<a class="code" href="class_cell.html#a1a06dbd756993e2677b3bb49d5a10b39" title="隣接セルの生存数.">m_lNeighborAliveNum</a> = 0;
+<a name="l00040"></a>00040                 this-&gt;<a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>.<a class="code" href="class_cell_attribute.html#a0f901273ebab28bfdfa5184d158ac506" title="状態を設定.">setState</a>(<a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896ad85063841c55f4322a7c7a796b15bea1">CellAttribute::DEAD</a>);
+<a name="l00041"></a>00041         }
+<a name="l00042"></a>00042 
+<a name="l00050"></a><a class="code" href="class_cell.html#a88b4cc03f827dbb40856c146692a6abf">00050</a>     <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> <a class="code" href="class_cell.html#a88b4cc03f827dbb40856c146692a6abf" title="自分自身のセルの状態を取得.">getState</a>()<span class="keyword"> const</span>
+<a name="l00051"></a>00051 <span class="keyword">    </span>{
+<a name="l00052"></a>00052         <span class="keywordflow">return</span> (this-&gt;<a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>.<a class="code" href="class_cell_attribute.html#a7f18a29c275c20e3f6bd352c94be2e81" title="状態を取得.">getState</a>());
+<a name="l00053"></a>00053     }
+<a name="l00054"></a>00054 
+<a name="l00060"></a><a class="code" href="class_cell.html#a6cb44292d5b22e73ce283f3bc56be225">00060</a>     <span class="keywordtype">void</span> <a class="code" href="class_cell.html#a6cb44292d5b22e73ce283f3bc56be225" title="自分自身のセルの状態を設定.">setState</a>(<a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> i_eState)
+<a name="l00061"></a>00061     {
+<a name="l00062"></a>00062         this-&gt;<a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>.<a class="code" href="class_cell_attribute.html#a0f901273ebab28bfdfa5184d158ac506" title="状態を設定.">setState</a>(i_eState);
+<a name="l00063"></a>00063     }
+<a name="l00064"></a>00064 
+<a name="l00070"></a><a class="code" href="class_cell.html#a9767d4d03039f19fc539c3b14efabd00">00070</a>     <span class="keywordtype">void</span> <a class="code" href="class_cell.html#a9767d4d03039f19fc539c3b14efabd00" title="隣接セルを設定する.">setNeighbor</a>(<a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a>* i_pCell)
+<a name="l00071"></a>00071         {
+<a name="l00072"></a>00072                 this-&gt;<a class="code" href="class_subject.html#a32e4d692241be487c8ad8397d5774e8e" title="Observerを登録する.">attach</a>(i_pCell);
+<a name="l00073"></a>00073         }
+<a name="l00074"></a>00074 
+<a name="l00082"></a><a class="code" href="class_cell.html#a82b599c382d7fd0a22b2407f26d5133d">00082</a>     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#a82b599c382d7fd0a22b2407f26d5133d" title="隣接セルに自分の状態を通知する.">sendState</a>()
+<a name="l00083"></a>00083         {
+<a name="l00084"></a>00084                 this-&gt;<a class="code" href="class_subject.html#a3227927bada4253d738f2adf10e1c021" title="Observerへ通知を送信.">notify</a>(&amp;(this-&gt;<a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>));
+<a name="l00085"></a>00085             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00086"></a>00086         }
 <a name="l00087"></a>00087 
-<a name="l00093"></a><a class="code" href="class_cell.html#ae83b931d5b3e1f54a92bd201710b6ed4">00093</a>     <span class="keywordtype">long</span> <a class="code" href="class_cell.html#ae83b931d5b3e1f54a92bd201710b6ed4" title="セルの座標位置(縦方向)を取得.">getRow</a>()<span class="keyword"> const</span>
-<a name="l00094"></a>00094 <span class="keyword">    </span>{
-<a name="l00095"></a>00095         <span class="keywordflow">return</span> (<a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>.<a class="code" href="class_cell_attribute.html#a424cc22717f7a49c82deb89137b24491" title="座標位置（縦方向）を取得.">getRow</a>());
-<a name="l00096"></a>00096     }
-<a name="l00097"></a>00097 
-<a name="l00105"></a><a class="code" href="class_cell.html#a88b4cc03f827dbb40856c146692a6abf">00105</a>     <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> <a class="code" href="class_cell.html#a88b4cc03f827dbb40856c146692a6abf" title="自分自身のセルの状態を取得.">getState</a>()<span class="keyword"> const</span>
-<a name="l00106"></a>00106 <span class="keyword">    </span>{
-<a name="l00107"></a>00107         <span class="keywordflow">return</span> (<a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>.<a class="code" href="class_cell_attribute.html#a7f18a29c275c20e3f6bd352c94be2e81" title="状態を取得.">getState</a>());
-<a name="l00108"></a>00108     }
-<a name="l00109"></a>00109 
-<a name="l00115"></a><a class="code" href="class_cell.html#a6cb44292d5b22e73ce283f3bc56be225">00115</a>     <span class="keywordtype">void</span> <a class="code" href="class_cell.html#a6cb44292d5b22e73ce283f3bc56be225" title="自分自身のセルの状態を設定.">setState</a>(<a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> i_eState)
-<a name="l00116"></a>00116     {
-<a name="l00117"></a>00117         <a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>.<a class="code" href="class_cell_attribute.html#a0f901273ebab28bfdfa5184d158ac506" title="状態を設定.">setState</a>(i_eState);
-<a name="l00118"></a>00118     }
-<a name="l00119"></a>00119 
-<a name="l00126"></a>00126     <span class="keywordtype">void</span> <a class="code" href="class_cell.html#afdb3033e7ec752cb0ebbddce329672d9" title="隣接セルを設定する.">setNeighbor</a>(<a class="code" href="class_matrix_cell.html" title="全細胞（全セル）を管理するクラス.">MatrixCell</a>* i_pcMatrixCell);
-<a name="l00127"></a>00127 
-<a name="l00135"></a>00135     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#a4777191ed971bcf11a049e5419117c26" title="隣接セルに自分の状態を通知する.">sendStateToNeighborCell</a>();
-<a name="l00136"></a>00136 
-<a name="l00146"></a>00146     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#af4285d006aff28e699be8eb2624c67ef" title="自分自身の状態を決定する.">decideState</a>();
-<a name="l00147"></a>00147 
-<a name="l00148"></a>00148 <span class="keyword">private</span>:
-<a name="l00149"></a>00149     
-<a name="l00154"></a><a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7">00154</a>     <a class="code" href="class_cell_attribute.html" title="細胞（セル）の属性情報.">CellAttribute</a> <a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>;
-<a name="l00155"></a>00155 
-<a name="l00161"></a><a class="code" href="class_cell.html#abcdfeb97f95fbf0663b1757368c4e00a">00161</a>     <span class="keywordtype">long</span> <a class="code" href="class_cell.html#abcdfeb97f95fbf0663b1757368c4e00a" title="隣接セルの状態数.">m_rglNeighborStateNum</a>[<a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896abdd90fe0c5bf98ef6ad57ec760c7f27e">CellAttribute::CELL_STATE_MAX</a>];
-<a name="l00162"></a>00162 
-<a name="l00167"></a><a class="code" href="class_cell.html#a64ffe76364ba5033b707069e1d5fc2b6">00167</a>     <a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a>* <a class="code" href="class_cell.html#a64ffe76364ba5033b707069e1d5fc2b6" title="隣接セルへのポインタ.">m_pcNeighborCell</a>[<a class="code" href="class_cell.html#a7bee3d0bb0f418134045d0820aa91cdba85ef0f4b72c2c143f9d3a082e6a6bd51">NEIGHBOR_MAX</a>];
-<a name="l00168"></a>00168 
-<a name="l00177"></a>00177     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#ac3aab092f9dc4f4ae5720764425b13c2" title="自分自身と隣接セルの状態から, 誕生か否かを判定する.">isBorn</a>();
-<a name="l00178"></a>00178 
-<a name="l00187"></a>00187     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#a198293bdea88ad37ec08682444905a91" title="自分自身と隣接セルの状態から, 生存か否かを判定する.">isSurvive</a>();
-<a name="l00188"></a>00188 
-<a name="l00197"></a>00197     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#a666a25cbec6e4184c3c2eb677a0e79b4" title="自分自身と隣接セルの状態から, 過疎か否かを判定する.">isUnderPopulation</a>();
-<a name="l00198"></a>00198 
-<a name="l00207"></a>00207     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#a11bd0388644ab8e3470ff90031763672" title="自分自身と隣接セルの状態から, 過密か否かを判定する.">isOverPopulation</a>();
-<a name="l00208"></a>00208 
-<a name="l00216"></a>00216     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#a18b19f1a2c5774f3f25ca4851270cce1" title="隣接セルの状態を受け取る.">receiveStateFromNeighborCell</a>(<a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> i_eState);
-<a name="l00217"></a>00217 
-<a name="l00226"></a>00226     <span class="keywordtype">long</span> <a class="code" href="class_cell.html#a02e58eed925b592008a50e054bbb2d1a" title="境界値をチェックする.">checkRegion</a>(<span class="keywordtype">long</span> i_lValue, <span class="keywordtype">long</span> i_lMax);
-<a name="l00227"></a>00227 
-<a name="l00228"></a>00228 };
-<a name="l00229"></a>00229 
-<a name="l00230"></a>00230 <span class="preprocessor">#endif  //__CELL_H__</span>
+<a name="l00097"></a>00097     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#af4285d006aff28e699be8eb2624c67ef" title="自分自身の状態を決定する.">decideState</a>();
+<a name="l00098"></a>00098 
+<a name="l00105"></a><a class="code" href="class_cell.html#af837a9cb05173df742c2825a48f70fbf">00105</a>         <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#af837a9cb05173df742c2825a48f70fbf" title="Subjectから通知を受信.">update</a>(<a class="code" href="class_information.html" title="オブザーバーパターンにおいて通知を行う場合, 通知したい情報">Information</a>* i_pcInformation)
+<a name="l00106"></a>00106         {
+<a name="l00107"></a>00107                 this-&gt;<a class="code" href="class_cell.html#ace1b366ba3a995623efd0f89205aa441" title="隣接セルの状態を受け取る.">receiveStateFromNeighborCell</a>( static_cast&lt;CellAttribute*&gt;(i_pcInformation) );
+<a name="l00108"></a>00108                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00109"></a>00109         }
+<a name="l00110"></a>00110 
+<a name="l00117"></a><a class="code" href="class_cell.html#acf90e6e3ba52c1e0dd3faa91e8f4403d">00117</a>         <span class="keywordtype">long</span> <a class="code" href="class_cell.html#acf90e6e3ba52c1e0dd3faa91e8f4403d" title="隣接セルの生存数を取得.">getNeighborAliveNum</a>()<span class="keyword"> const</span>
+<a name="l00118"></a>00118 <span class="keyword">        </span>{
+<a name="l00119"></a>00119                 <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_cell.html#a1a06dbd756993e2677b3bb49d5a10b39" title="隣接セルの生存数.">m_lNeighborAliveNum</a>;
+<a name="l00120"></a>00120         }
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122 <span class="keyword">private</span>:
+<a name="l00123"></a>00123     
+<a name="l00128"></a><a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7">00128</a>     <a class="code" href="class_cell_attribute.html" title="細胞（セル）の属性情報.">CellAttribute</a> <a class="code" href="class_cell.html#a2b30d0feda00ff6838b48f918fb640d7" title="自分自身のセルの属性.">m_cAttribute</a>;
+<a name="l00129"></a>00129 
+<a name="l00133"></a><a class="code" href="class_cell.html#a1a06dbd756993e2677b3bb49d5a10b39">00133</a>     <span class="keywordtype">long</span> <a class="code" href="class_cell.html#a1a06dbd756993e2677b3bb49d5a10b39" title="隣接セルの生存数.">m_lNeighborAliveNum</a>;
+<a name="l00134"></a>00134 
+<a name="l00142"></a><a class="code" href="class_cell.html#ace1b366ba3a995623efd0f89205aa441">00142</a>     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#ace1b366ba3a995623efd0f89205aa441" title="隣接セルの状態を受け取る.">receiveStateFromNeighborCell</a>(<a class="code" href="class_cell_attribute.html" title="細胞（セル）の属性情報.">CellAttribute</a>* i_pcCellAttribute)
+<a name="l00143"></a>00143         {
+<a name="l00144"></a>00144                 <span class="keywordflow">if</span>(<a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896a463609684da6072f9620c779c17bc821">CellAttribute::ALIVE</a> == i_pcCellAttribute-&gt;<a class="code" href="class_cell_attribute.html#a7f18a29c275c20e3f6bd352c94be2e81" title="状態を取得.">getState</a>())
+<a name="l00145"></a>00145                 {
+<a name="l00146"></a>00146                         this-&gt;<a class="code" href="class_cell.html#a1a06dbd756993e2677b3bb49d5a10b39" title="隣接セルの生存数.">m_lNeighborAliveNum</a>++;
+<a name="l00147"></a>00147                 }
+<a name="l00148"></a>00148                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00149"></a>00149         }
+<a name="l00150"></a>00150 
+<a name="l00159"></a>00159     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#ac3aab092f9dc4f4ae5720764425b13c2" title="自分自身と隣接セルの状態から, 誕生か否かを判定する.">isBorn</a>();
+<a name="l00160"></a>00160 
+<a name="l00169"></a>00169     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#a198293bdea88ad37ec08682444905a91" title="自分自身と隣接セルの状態から, 生存か否かを判定する.">isSurvive</a>();
+<a name="l00170"></a>00170 
+<a name="l00179"></a>00179     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#a666a25cbec6e4184c3c2eb677a0e79b4" title="自分自身と隣接セルの状態から, 過疎か否かを判定する.">isUnderPopulation</a>();
+<a name="l00180"></a>00180 
+<a name="l00189"></a>00189     <span class="keywordtype">bool</span> <a class="code" href="class_cell.html#a11bd0388644ab8e3470ff90031763672" title="自分自身と隣接セルの状態から, 過密か否かを判定する.">isOverPopulation</a>();
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191 };
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193 <span class="preprocessor">#endif  //__CELL_H__</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -162,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 3 2013 21:42:51 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 2 2015 22:34:07 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

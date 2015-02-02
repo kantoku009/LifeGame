@@ -7,93 +7,38 @@
 #define __CELL_H__
 
 #include "../Lib/Observer.h"
-#include "CellAttribute.h"
-
-// クラスの前方宣言.
-class MatrixCell;
+#include "../Lib/CellAttribute.h"
 
 /**
  * @brief 細胞（セル）1個をあらわすクラス.
  */
-class Cell : public Subject
+class Cell : public Subject, Observer
 {
 public:
-    /**
-     * @brief   隣接セルの方向と番号の定義.
-     * @note    隣接セルの方向と番号を以下のように定義する.(selfは自分自身).<br>
-     *          <table border="1">
-     *              <tr><td>0:TOP_LEFT</td><td>1:TOP_MIDDLE</td><td>2:TOP_RIGHT</td>
-     *              <tr><td>3:LEFT</td><td>self</td><td>4:RIGHT</td>
-     *              <tr><td>5:BOTTOM_LEFT</td><td>6:BOTTOM_MIDDLE</td><td>7:BOTTOM_RIGHT</td>
-     *          </table>
-     */
-    enum NEIGHBOR_POSITION
-    {
-        TOP_LEFT=0,     TOP_MIDDLE,     TOP_RIGHT, 
-        LEFT,                           RIGHT,
-        BOTTOM_LEFT,    BOTTOM_MIDDLE,  BOTTOM_RIGHT,
-        NEIGHBOR_MAX
-    };
 
     /**
      * @brief   コンストラクタ.
-     * @param   long i_lCol 座標位置 横方向.
-     * @param   long i_lRow 座標位置 縦方向.
      */
-    Cell(long i_lCol, long i_lRow);
+    Cell()
+	{
+		this->init();
+	}
 
     /**
      * @brief   デストラクタ.
      */
-    virtual ~Cell();
+    virtual ~Cell() { }
 
     /**
      * @brief   初期化.
-     * @param   long i_lCol 座標位置 横方向.
-     * @param   long i_lRow 座標位置 縦方向.
-     * @return  なし.
-     */
-    void init(long i_lCol, long i_lRow);
-
-    /**
-     * @brief   セルの座標位置(横方向)を設定.
-     * @param   long i_lCol 座標位置(横方向).
-     * @return  なし.
-     */
-    void setCol(long i_lCol)
-    {
-        m_cAttribute.setCol(i_lCol);
-    }
-
-    /**
-     * @brief   セルの座標位置(横方向)を取得.
      * @param   なし.
-     * @return  セルの座標位置(横方向).
-     */
-    long getCol() const
-    {
-        return (m_cAttribute.getCol());
-    }
-
-    /**
-     * @brief   セルの座標位置(縦方向)を設定.
-     * @param   long i_lCol 座標位置(縦方向).
      * @return  なし.
      */
-    void setRow(long i_lRow)
-    {
-        m_cAttribute.setRow(i_lRow);
-    }
-
-    /**
-     * @brief   セルの座標位置(縦方向)を取得.
-     * @param   なし.
-     * @return  セルの座標位置(縦方向).
-     */
-    long getRow() const
-    {
-        return (m_cAttribute.getRow());
-    }
+    void init()
+	{
+		this->m_lNeighborAliveNum = 0;
+		this->m_cAttribute.setState(CellAttribute::DEAD);
+	}
 
     /**
      * @brief   自分自身のセルの状態を取得.
@@ -104,7 +49,7 @@ public:
      */
     CellAttribute::CELL_STATE getState() const
     {
-        return (m_cAttribute.getState());
+        return (this->m_cAttribute.getState());
     }
 
     /**
@@ -114,16 +59,18 @@ public:
      */
     void setState(CellAttribute::CELL_STATE i_eState)
     {
-        m_cAttribute.setState(i_eState);
+        this->m_cAttribute.setState(i_eState);
     }
 
     /**
      * @brief   隣接セルを設定する.
-     * @param   MatrixCell* i_pcMatrixCell この引数から, 隣接セルを取得する
+     * @param   Cell* i_pCell	隣接セル.
      * @return  なし.
-     * @note    隣接セルの方向と番号は, NEIGHBOR_POSITIONを想定している.
      */
-    void setNeighbor(MatrixCell* i_pcMatrixCell);
+    void setNeighbor(Cell* i_pCell)
+	{
+		this->attach(i_pCell);
+	}
 
     /**
      * @brief   隣接セルに自分の状態を通知する.
@@ -132,7 +79,11 @@ public:
      * @retval  true    成功.
      * @retval  false   失敗.
      */
-    bool sendStateToNeighborCell();
+    bool sendState()
+	{
+		this->notify(&(this->m_cAttribute));
+	    return true;
+	}
 
     /**
      * @brief   自分自身の状態を決定する.
@@ -145,26 +96,57 @@ public:
      */
     bool decideState();
 
+	/**
+	 * @brief	Subjectから通知を受信.
+	 * @param	Information* i_pcInformation セルの属性.
+	 * @return	成功/失敗.
+	 * @note	CellAttributeのインスタンスが渡されることを想定している.
+	 */
+	bool update(Information* i_pcInformation)
+	{
+		this->receiveStateFromNeighborCell( static_cast<CellAttribute*>(i_pcInformation) );
+		return true;
+	}
+
+	/**
+	 * @brief	隣接セルの生存数を取得.
+	 * @param	なし.
+	 * @return	隣接セルの生存数.
+	 * @note	デバッグ用.
+	 */
+	long getNeighborAliveNum() const
+	{
+		return this->m_lNeighborAliveNum;
+	}
+
 private:
     
     /**
      * @brief   自分自身のセルの属性.
-     * @note    座標位置と状態を保持する.
+     * @note    状態を保持する.
      */
     CellAttribute m_cAttribute;
 
     /**
-     * @brief   隣接セルの状態数.
-     * @note    m_rglNeighborStateNum[CellAttribute::DEAD]  隣接セルの死滅数.
-     * @note    m_rglNeighborStateNum[CellAttribute::ALIVE] 隣接セルの生存数.
+     * @brief   隣接セルの生存数.
      */
-    long m_rglNeighborStateNum[CellAttribute::CELL_STATE_MAX];
+    long m_lNeighborAliveNum;
 
     /**
-     * @brief   隣接セルへのポインタ.
-     * @see     隣接セルの方向は, NEIGHBOR_POSITIONを参照.
+     * @brief   隣接セルの状態を受け取る.
+     * @param   CellAttribute::CELL_STATE i_eState 隣接セルの状態(DEAD/ALIVE)
+     * @return  結果.
+     * @retval  true    成功.
+     * @retval  false   失敗.
      */
-    Cell* m_pcNeighborCell[NEIGHBOR_MAX];
+    bool receiveStateFromNeighborCell(CellAttribute* i_pcCellAttribute)
+	{
+		if(CellAttribute::ALIVE == i_pcCellAttribute->getState())
+		{
+			this->m_lNeighborAliveNum++;
+		}
+		return true;
+	}
 
     /**
      * @brief   自分自身と隣接セルの状態から, 誕生か否かを判定する.
@@ -205,25 +187,6 @@ private:
      * @note    生きているセルに隣接する生きたセルが4つ以上ならば, 過密により死滅する.
      */
     bool isOverPopulation();
-
-    /**
-     * @brief   隣接セルの状態を受け取る.
-     * @param   CellAttribute::CELL_STATE i_eState 隣接セルの状態(DEAD/ALIVE)
-     * @return  結果.
-     * @retval  true    成功.
-     * @retval  false   失敗.
-     */
-    bool receiveStateFromNeighborCell(CellAttribute::CELL_STATE i_eState);
-
-    /**
-     * @brief   境界値をチェックする.
-     * @param   long i_lValue   チェックしたい値.
-     * @param   long i_lMax     チェックしたい値の最大値.
-     * @note    引数i_lValueが境界値だった場合, 以下とする.
-     *              ・最大値 = 最小値(0).
-     *          つまり, 境界値は存在せず(2次元の場合)球面とする.
-     */
-    long checkRegion(long i_lValue, long i_lMax);
 
 };
 

@@ -62,30 +62,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 This is the complete list of members for <a class="el" href="class_matrix_cell.html">MatrixCell</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="class_subject.html#a32e4d692241be487c8ad8397d5774e8e">attach</a>(Observer *i_pcObserver)</td><td><a class="el" href="class_subject.html">Subject</a></td><td><code> [inline, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a4657d5a6c9ded9e1c579a5ed89534930">calcNextGeneration</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a41c05b2e7b9548fc742745204d744e1f">check_region</a>(long i_lValue, long i_lMax)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a65870f01141141db6788809c27168f17">decideNextGeneration</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_subject.html#a9d0077314cb9cac9ab47e61723feac36">detach</a>(Observer *i_pcObserver)</td><td><a class="el" href="class_subject.html">Subject</a></td><td><code> [inline, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#ab3193ff6e5a11b3dc71f0f8febed53c7">getCell</a>(long i_lCol, long i_lRow)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a82407ce68f9e8a747dbf1742ad122274">getCellState</a>(long i_lCol, long i_lRow)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#aa694afd21b2d8a4ec7d1074864c31750">dispAllCellState</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a3314a15d4de960a5bd1e36634c3d7356">dispNeighborAliveCell</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#aafb94fa662351c8595245e4eaf87e119">getCell</a>(long i_lCol, long i_lRow)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a82407ce68f9e8a747dbf1742ad122274">getCellState</a>(long i_lCol, long i_lRow)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#ab2f03da0c2c58e98757a89d7d7ad23d3">getColMax</a>() const </td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a5727de08741d3d330af58e94831430a2">getRowMax</a>() const </td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_subject.html#aefc100a8fb92b5147442ae501f2e83e7">hasObserver</a>(Observer *i_pcObserver)</td><td><a class="el" href="class_subject.html">Subject</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#aa5f47cd609b8f5273c7daf8297b20ef6">init</a>(long i_lColMax, long i_lRowMax)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a83713b704e825f6d799ee00b6ebcc6f3">linkNeighborCel</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a83542d19b12b1f4ff20e46d5b3fbdaf7">linkCell</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a78eac79ce9aea16886fc05c870697454">m_lColMax</a></td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#aa7b42f6fe566dfdd00555f2973f6b198">m_lRowMax</a></td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_subject.html#a415ceef76838ce87291662a94d94fe0a">m_pcObserverList</a></td><td><a class="el" href="class_subject.html">Subject</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a61df6b87f2e46bd7d4fbb97021f99fb2">m_vecCellArray</a></td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#ac2fab249ff6882ad83a20bda9ef0c71d">makeCell</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a7ca6bbf1cc810f6139b2cc1f34711b77">MatrixCell</a>(long i_lColMax, long i_lRowMax)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a7ca6bbf1cc810f6139b2cc1f34711b77">MatrixCell</a>(long i_lColMax, long i_lRowMax)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_subject.html#a3227927bada4253d738f2adf10e1c021">notify</a>(Information *i_pcInformation=0)</td><td><a class="el" href="class_subject.html">Subject</a></td><td><code> [inline, protected, virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#ac69ab1d5800d9f3a946ec1b7e8247e43">notifyNeighborCell</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#ad1a6c1803575b4fb6c9bb8d9c0992087">refreshCell</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a8e1225d1e4a38a290a8e1e6e1ad0b1ce">setCellState</a>(long i_lCol, long i_lRow, CellAttribute::CELL_STATE i_eState)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#ae707dccd5d61aba0e37669a10ea59a08">sendStateToNeighborCell</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a8e1225d1e4a38a290a8e1e6e1ad0b1ce">setCellState</a>(long i_lCol, long i_lRow, CellAttribute::CELL_STATE i_eState)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a3fae50c2ba07732d66137dfaab18bf01">setColMax</a>(long i_lColMax)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [inline, private]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a0e4dfd58dfac1fb2b1a9eef9bae97a56">setNeighborCell</a>(Cell *i_pcTargetCell, long i_lCol, long i_lRow)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a380dd6439189d16dc1ba1df9878881b3">setRowMax</a>(long i_lRowMax)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [inline, private]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_subject.html#ab468044832c824c6d6c2f46272655207">Subject</a>()</td><td><a class="el" href="class_subject.html">Subject</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#ac1628d2d793a0fd04005e5b4e7bf0574">update</a>(Information *i_pcInformation)</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a6bc3fd3a444ad530d2122a21d24c1687">~MatrixCell</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_matrix_cell.html#a55785983eb78554e172df55812b7b557">~MatrixCell</a>()</td><td><a class="el" href="class_matrix_cell.html">MatrixCell</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_subject.html#ae5980067d5ec5522db5a0d78100a34be">~Subject</a>()</td><td><a class="el" href="class_subject.html">Subject</a></td><td><code> [inline, virtual]</code></td></tr>
 </table></div>
 <!-- window showing the filter options -->
@@ -105,7 +109,7 @@ This is the complete list of members for <a class="el" href="class_matrix_cell.h
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 3 2013 21:42:51 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 2 2015 22:34:07 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

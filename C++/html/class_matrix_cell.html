@@ -86,34 +86,42 @@ Inheritance diagram for MatrixCell:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a7ca6bbf1cc810f6139b2cc1f34711b77">MatrixCell</a> (long i_lColMax, long i_lRowMax)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ.  <a href="#a7ca6bbf1cc810f6139b2cc1f34711b77"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a6bc3fd3a444ad530d2122a21d24c1687">~MatrixCell</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ.  <a href="#a6bc3fd3a444ad530d2122a21d24c1687"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a55785983eb78554e172df55812b7b557">~MatrixCell</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ.  <a href="#a55785983eb78554e172df55812b7b557"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#aa5f47cd609b8f5273c7daf8297b20ef6">init</a> (long i_lColMax, long i_lRowMax)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化.  <a href="#aa5f47cd609b8f5273c7daf8297b20ef6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#ab2f03da0c2c58e98757a89d7d7ad23d3">getColMax</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">セルの横最大幅を取得.  <a href="#ab2f03da0c2c58e98757a89d7d7ad23d3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a5727de08741d3d330af58e94831430a2">getRowMax</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">セルの縦最大幅を取得.  <a href="#a5727de08741d3d330af58e94831430a2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#ac1628d2d793a0fd04005e5b4e7bf0574">update</a> (<a class="el" href="class_information.html">Information</a> *i_pcInformation)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Observerパターンの通知.  <a href="#ac1628d2d793a0fd04005e5b4e7bf0574"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#ad1a6c1803575b4fb6c9bb8d9c0992087">refreshCell</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全セルの更新を行う.  <a href="#ad1a6c1803575b4fb6c9bb8d9c0992087"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#ab3193ff6e5a11b3dc71f0f8febed53c7">getCell</a> (long i_lCol, long i_lRow)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">セルを取得する.  <a href="#ab3193ff6e5a11b3dc71f0f8febed53c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#aafb94fa662351c8595245e4eaf87e119">getCell</a> (long i_lCol, long i_lRow)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">セルを取得する.  <a href="#aafb94fa662351c8595245e4eaf87e119"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a8e1225d1e4a38a290a8e1e6e1ad0b1ce">setCellState</a> (long i_lCol, long i_lRow, <a class="el" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896">CellAttribute::CELL_STATE</a> i_eState)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">セルの状態を設定する.  <a href="#a8e1225d1e4a38a290a8e1e6e1ad0b1ce"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896">CellAttribute::CELL_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a82407ce68f9e8a747dbf1742ad122274">getCellState</a> (long i_lCol, long i_lRow)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">セルの状態を取得する.  <a href="#a82407ce68f9e8a747dbf1742ad122274"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#ad1a6c1803575b4fb6c9bb8d9c0992087">refreshCell</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全セルの更新を行う.  <a href="#ad1a6c1803575b4fb6c9bb8d9c0992087"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#ac1628d2d793a0fd04005e5b4e7bf0574">update</a> (<a class="el" href="class_information.html">Information</a> *i_pcInformation)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Observerパターンの通知.  <a href="#ac1628d2d793a0fd04005e5b4e7bf0574"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#aa694afd21b2d8a4ec7d1074864c31750">dispAllCellState</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">全セルの状態を表示.  <a href="#aa694afd21b2d8a4ec7d1074864c31750"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a3314a15d4de960a5bd1e36634c3d7356">dispNeighborAliveCell</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">隣接セルの生存数を表示.  <a href="#a3314a15d4de960a5bd1e36634c3d7356"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#ac2fab249ff6882ad83a20bda9ef0c71d">makeCell</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">セルを生成する.  <a href="#ac2fab249ff6882ad83a20bda9ef0c71d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a83713b704e825f6d799ee00b6ebcc6f3">linkNeighborCel</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">隣接セルをリンクさせる.  <a href="#a83713b704e825f6d799ee00b6ebcc6f3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#ac69ab1d5800d9f3a946ec1b7e8247e43">notifyNeighborCell</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">隣接セルに自分自身の状態を通知する.  <a href="#ac69ab1d5800d9f3a946ec1b7e8247e43"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a4657d5a6c9ded9e1c579a5ed89534930">calcNextGeneration</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">次世代のセルを計算する.  <a href="#a4657d5a6c9ded9e1c579a5ed89534930"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a83542d19b12b1f4ff20e46d5b3fbdaf7">linkCell</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">隣接セルをリンクさせる.  <a href="#a83542d19b12b1f4ff20e46d5b3fbdaf7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a0e4dfd58dfac1fb2b1a9eef9bae97a56">setNeighborCell</a> (<a class="el" href="class_cell.html">Cell</a> *i_pcTargetCell, long i_lCol, long i_lRow)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">隣接セルを設定する.  <a href="#a0e4dfd58dfac1fb2b1a9eef9bae97a56"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a41c05b2e7b9548fc742745204d744e1f">check_region</a> (long i_lValue, long i_lMax)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">境界値をチェックする.  <a href="#a41c05b2e7b9548fc742745204d744e1f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#ae707dccd5d61aba0e37669a10ea59a08">sendStateToNeighborCell</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">隣接セルに自分自身の状態を通知する.  <a href="#ae707dccd5d61aba0e37669a10ea59a08"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a65870f01141141db6788809c27168f17">decideNextGeneration</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">次世代のセルを決定する.  <a href="#a65870f01141141db6788809c27168f17"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a3fae50c2ba07732d66137dfaab18bf01">setColMax</a> (long i_lColMax)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">セル横最大幅を設定.  <a href="#a3fae50c2ba07732d66137dfaab18bf01"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_cell.html#a380dd6439189d16dc1ba1df9878881b3">setRowMax</a> (long i_lRowMax)</td></tr>
@@ -150,7 +158,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -160,15 +168,15 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6bc3fd3a444ad530d2122a21d24c1687"></a><!-- doxytag: member="MatrixCell::~MatrixCell" ref="a6bc3fd3a444ad530d2122a21d24c1687" args="()" -->
+<a class="anchor" id="a55785983eb78554e172df55812b7b557"></a><!-- doxytag: member="MatrixCell::~MatrixCell" ref="a55785983eb78554e172df55812b7b557" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MatrixCell::~MatrixCell </td>
+          <td class="memname">virtual MatrixCell::~MatrixCell </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -179,12 +187,49 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a4657d5a6c9ded9e1c579a5ed89534930"></a><!-- doxytag: member="MatrixCell::calcNextGeneration" ref="a4657d5a6c9ded9e1c579a5ed89534930" args="()" -->
+<a class="anchor" id="a41c05b2e7b9548fc742745204d744e1f"></a><!-- doxytag: member="MatrixCell::check_region" ref="a41c05b2e7b9548fc742745204d744e1f" args="(long i_lValue, long i_lMax)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool MatrixCell::calcNextGeneration </td>
+          <td class="memname">long MatrixCell::check_region </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>i_lValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>i_lMax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>境界値をチェックする. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">long</td><td>i_lValue チェックしたい値. </td></tr>
+    <tr><td class="paramname">long</td><td>i_lMax チェックしたい値の最大値. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>引数i_lValueが境界値だった場合, 以下とする. ・最大値 = 最小値(0). つまり, 境界値は存在せず(2次元の場合)球面となる. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a65870f01141141db6788809c27168f17"></a><!-- doxytag: member="MatrixCell::decideNextGeneration" ref="a65870f01141141db6788809c27168f17" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MatrixCell::decideNextGeneration </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [private]</code></td>
@@ -193,7 +238,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>次世代のセルを計算する. </p>
+<p>次世代のセルを決定する. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">なし.</td><td></td></tr>
@@ -211,12 +256,50 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab3193ff6e5a11b3dc71f0f8febed53c7"></a><!-- doxytag: member="MatrixCell::getCell" ref="ab3193ff6e5a11b3dc71f0f8febed53c7" args="(long i_lCol, long i_lRow)" -->
+<a class="anchor" id="aa694afd21b2d8a4ec7d1074864c31750"></a><!-- doxytag: member="MatrixCell::dispAllCellState" ref="aa694afd21b2d8a4ec7d1074864c31750" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_cell.html">Cell</a> * MatrixCell::getCell </td>
+          <td class="memname">string MatrixCell::dispAllCellState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>全セルの状態を表示. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>デバッグ用. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3314a15d4de960a5bd1e36634c3d7356"></a><!-- doxytag: member="MatrixCell::dispNeighborAliveCell" ref="a3314a15d4de960a5bd1e36634c3d7356" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string MatrixCell::dispNeighborAliveCell </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>隣接セルの生存数を表示. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>デバッグ用. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aafb94fa662351c8595245e4eaf87e119"></a><!-- doxytag: member="MatrixCell::getCell" ref="aafb94fa662351c8595245e4eaf87e119" args="(long i_lCol, long i_lRow)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_cell.html">Cell</a>* MatrixCell::getCell </td>
           <td>(</td>
           <td class="paramtype">long&#160;</td>
           <td class="paramname"><em>i_lCol</em>, </td>
@@ -230,7 +313,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -267,7 +350,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -378,12 +461,12 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a83713b704e825f6d799ee00b6ebcc6f3"></a><!-- doxytag: member="MatrixCell::linkNeighborCel" ref="a83713b704e825f6d799ee00b6ebcc6f3" args="()" -->
+<a class="anchor" id="a83542d19b12b1f4ff20e46d5b3fbdaf7"></a><!-- doxytag: member="MatrixCell::linkCell" ref="a83542d19b12b1f4ff20e46d5b3fbdaf7" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool MatrixCell::linkNeighborCel </td>
+          <td class="memname">bool MatrixCell::linkCell </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [private]</code></td>
@@ -435,38 +518,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac69ab1d5800d9f3a946ec1b7e8247e43"></a><!-- doxytag: member="MatrixCell::notifyNeighborCell" ref="ac69ab1d5800d9f3a946ec1b7e8247e43" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool MatrixCell::notifyNeighborCell </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [private]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>隣接セルに自分自身の状態を通知する. </p>
-<dl><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">なし.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>通知結果. </dd></dl>
-<dl><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">true</td><td>成功. </td></tr>
-    <tr><td class="paramname">false</td><td>失敗. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="ad1a6c1803575b4fb6c9bb8d9c0992087"></a><!-- doxytag: member="MatrixCell::refreshCell" ref="ad1a6c1803575b4fb6c9bb8d9c0992087" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -489,6 +540,38 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>更新の結果. </dd></dl>
+<dl><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>成功. </td></tr>
+    <tr><td class="paramname">false</td><td>失敗. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae707dccd5d61aba0e37669a10ea59a08"></a><!-- doxytag: member="MatrixCell::sendStateToNeighborCell" ref="ae707dccd5d61aba0e37669a10ea59a08" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MatrixCell::sendStateToNeighborCell </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>隣接セルに自分自身の状態を通知する. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">なし.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>通知結果. </dd></dl>
 <dl><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname">true</td><td>成功. </td></tr>
@@ -524,7 +607,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
@@ -567,6 +650,50 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>なし. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>将来的には, セル横最大幅を可変にしたい. privateにしておくことで, プログラム実行中に変更不可としている. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0e4dfd58dfac1fb2b1a9eef9bae97a56"></a><!-- doxytag: member="MatrixCell::setNeighborCell" ref="a0e4dfd58dfac1fb2b1a9eef9bae97a56" args="(Cell *i_pcTargetCell, long i_lCol, long i_lRow)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MatrixCell::setNeighborCell </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>i_pcTargetCell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>i_lCol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>i_lRow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>隣接セルを設定する. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Cell*</td><td>i_pcTargetCell 隣接セルを設定するセル. </td></tr>
+    <tr><td class="paramname">long</td><td>i_lCol 設定するセルの横位置. </td></tr>
+    <tr><td class="paramname">long</td><td>i_lRow 設定するセルの縦位置. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>成功/失敗. </dd></dl>
 
 </div>
 </div>
@@ -672,8 +799,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>srcs/Controller/<a class="el" href="_matrix_cell_8h_source.html">MatrixCell.h</a></li>
-<li>srcs/Controller/<a class="el" href="_matrix_cell_8cpp.html">MatrixCell.cpp</a></li>
+<li>source/Model/<a class="el" href="_matrix_cell_8h_source.html">MatrixCell.h</a></li>
+<li>source/Model/<a class="el" href="_matrix_cell_8cpp.html">MatrixCell.cpp</a></li>
 </ul>
 </div>
 <!-- window showing the filter options -->
@@ -693,7 +820,7 @@ Private Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 3 2013 21:42:51 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 2 2015 22:34:07 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

@@ -1,8 +1,12 @@
 CC = g++
-SRCS = ./main.cpp ./View/LifeGameDisplayOnCurses.cpp ./View/ExpressionCell.cpp ./Controller/MatrixCell.cpp ./Model/Cell.cpp
+SRCS = ./main.cpp ./Controller/LifeGameController.cpp ./View/LifeGameViewOnCurses.cpp ./Model/MatrixCell.cpp ./Model/Cell.cpp
 LIBS = -lcurses
 LDFLAGS = -Wall -O2
-OUTFILE = -o LifeGame
+OUTFILE = LifeGame
 
 LifeGame:
-	$(CC) $(LDFLAGS) $(OUTFILE) $(LIBS) $(SRCS) 
+	$(CC) $(LDFLAGS) -o $(OUTFILE) $(LIBS) $(SRCS) 
+
+clean:
+	rm $(OUTFILE)
+

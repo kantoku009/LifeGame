@@ -2,22 +2,21 @@
  * @file    main.cpp
  * @brief   ライフゲームのmain関数.
  */
-#include <stdio.h>
 #include <unistd.h>
-
-#include "./View/LifeGameDisplayOnCurses.h"
+#include "./Controller/LifeGameController.h"
 
 #define DELAY   (1000*100)  // スリープの時間.単位はマイクロ秒.
 
 int main(int argc, char* argv[])
 {
-    LifeGameDisplayOnCurses a_cDisplay;
+	LifeGameController a_cController;
 
-    LifeGameDisplayOnCurses::LIFEGAME_EVENT a_eEvent = LifeGameDisplayOnCurses::EV_NONE;
+    LifeGameController::LIFEGAME_EVENT a_eEvent = LifeGameController::EV_NONE;
     do{
-        a_eEvent = a_cDisplay.eventLoop();
+        a_eEvent = a_cController.eventLoop();
         usleep(DELAY);                  // スリープ.
-    }while(LifeGameDisplayOnCurses::EV_QUIT != a_eEvent);
+    }while(LifeGameController::EV_QUIT != a_eEvent);
 
     return 0;
 }
+

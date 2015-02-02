@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 
-<title>srcs/Controller/MatrixCell.h Source File</title>
+<title>source/Model/MatrixCell.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 
@@ -54,7 +54,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">srcs/Controller/MatrixCell.h</div>  </div>
+<div class="title">source/Model/MatrixCell.h</div>  </div>
 </div>
 <div class="contents">
 <a href="_matrix_cell_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
@@ -62,57 +62,81 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#define __MATRIXCELL_H__</span>
 <a name="l00008"></a>00008 <span class="preprocessor"></span>
 <a name="l00009"></a>00009 <span class="preprocessor">#include &lt;vector&gt;</span>
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;../Lib/Observer.h&quot;</span>
-<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;../Model/CellAttribute.h&quot;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;../Model/Cell.h&quot;</span>
-<a name="l00014"></a>00014 
-<a name="l00019"></a><a class="code" href="class_matrix_cell.html">00019</a> <span class="keyword">class </span><a class="code" href="class_matrix_cell.html" title="全細胞（全セル）を管理するクラス.">MatrixCell</a> : <span class="keyword">public</span> <a class="code" href="class_observer.html" title="デザインパターン(オブザーバーパターン) Observer">Observer</a> , <span class="keyword">public</span> <a class="code" href="class_subject.html" title="デザインパターン(オブザーバーパターン) Subject">Subject</a>
-<a name="l00020"></a>00020 {
-<a name="l00021"></a>00021 <span class="keyword">public</span>:
-<a name="l00022"></a>00022 
-<a name="l00026"></a>00026     <a class="code" href="class_matrix_cell.html#a7ca6bbf1cc810f6139b2cc1f34711b77" title="コンストラクタ.">MatrixCell</a>(<span class="keywordtype">long</span> i_lColMax, <span class="keywordtype">long</span> i_lRowMax);
-<a name="l00027"></a>00027 
-<a name="l00031"></a>00031     <span class="keyword">virtual</span> <a class="code" href="class_matrix_cell.html#a6bc3fd3a444ad530d2122a21d24c1687" title="デストラクタ.">~MatrixCell</a>();
-<a name="l00032"></a>00032 
-<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="class_matrix_cell.html#aa5f47cd609b8f5273c7daf8297b20ef6" title="初期化.">init</a>(<span class="keywordtype">long</span> i_lColMax, <span class="keywordtype">long</span> i_lRowMax);
-<a name="l00039"></a>00039 
-<a name="l00045"></a><a class="code" href="class_matrix_cell.html#ab2f03da0c2c58e98757a89d7d7ad23d3">00045</a>     <span class="keywordtype">long</span> <a class="code" href="class_matrix_cell.html#ab2f03da0c2c58e98757a89d7d7ad23d3" title="セルの横最大幅を取得.">getColMax</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_matrix_cell.html#a78eac79ce9aea16886fc05c870697454" title="セルの横最大幅.">m_lColMax</a>; }
-<a name="l00046"></a>00046 
-<a name="l00052"></a><a class="code" href="class_matrix_cell.html#a5727de08741d3d330af58e94831430a2">00052</a>     <span class="keywordtype">long</span> <a class="code" href="class_matrix_cell.html#a5727de08741d3d330af58e94831430a2" title="セルの縦最大幅を取得.">getRowMax</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_matrix_cell.html#aa7b42f6fe566dfdd00555f2973f6b198" title="セルの縦最大幅.">m_lRowMax</a>; }
-<a name="l00053"></a>00053 
-<a name="l00059"></a>00059     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#ac1628d2d793a0fd04005e5b4e7bf0574" title="Observerパターンの通知.">update</a>(<a class="code" href="class_information.html" title="オブザーバーパターンにおいて通知を行う場合, 通知したい情報">Information</a>* i_pcInformation);
-<a name="l00060"></a>00060 
-<a name="l00068"></a>00068     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#ad1a6c1803575b4fb6c9bb8d9c0992087" title="全セルの更新を行う.">refreshCell</a>();
-<a name="l00069"></a>00069 
-<a name="l00076"></a>00076     <a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a>* <a class="code" href="class_matrix_cell.html#ab3193ff6e5a11b3dc71f0f8febed53c7" title="セルを取得する.">getCell</a>(<span class="keywordtype">long</span> i_lCol, <span class="keywordtype">long</span> i_lRow);
-<a name="l00077"></a>00077 
-<a name="l00085"></a>00085     <span class="keywordtype">void</span> <a class="code" href="class_matrix_cell.html#a8e1225d1e4a38a290a8e1e6e1ad0b1ce" title="セルの状態を設定する.">setCellState</a>(<span class="keywordtype">long</span> i_lCol, <span class="keywordtype">long</span> i_lRow, <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> i_eState);
-<a name="l00086"></a>00086 
-<a name="l00095"></a>00095     <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> <a class="code" href="class_matrix_cell.html#a82407ce68f9e8a747dbf1742ad122274" title="セルの状態を取得する.">getCellState</a>(<span class="keywordtype">long</span> i_lCol, <span class="keywordtype">long</span> i_lRow);
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;../Lib/Observer.h&quot;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &quot;../Lib/CellAttribute.h&quot;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &quot;<a class="code" href="_cell_8h.html" title="1細胞（1セル）を管理するクラスの宣言.">Cell.h</a>&quot;</span>
+<a name="l00015"></a>00015 
+<a name="l00020"></a><a class="code" href="class_matrix_cell.html">00020</a> <span class="keyword">class </span><a class="code" href="class_matrix_cell.html" title="全細胞（全セル）を管理するクラス.">MatrixCell</a> : <span class="keyword">public</span> <a class="code" href="class_observer.html" title="デザインパターン(オブザーバーパターン) Observer">Observer</a> , <span class="keyword">public</span> <a class="code" href="class_subject.html" title="デザインパターン(オブザーバーパターン) Subject">Subject</a>
+<a name="l00021"></a>00021 {
+<a name="l00022"></a>00022 <span class="keyword">public</span>:
+<a name="l00026"></a><a class="code" href="class_matrix_cell.html#a7ca6bbf1cc810f6139b2cc1f34711b77">00026</a>     <a class="code" href="class_matrix_cell.html#a7ca6bbf1cc810f6139b2cc1f34711b77" title="コンストラクタ.">MatrixCell</a>(<span class="keywordtype">long</span> i_lColMax, <span class="keywordtype">long</span> i_lRowMax)
+<a name="l00027"></a>00027         {
+<a name="l00028"></a>00028                 this-&gt;<a class="code" href="class_matrix_cell.html#aa5f47cd609b8f5273c7daf8297b20ef6" title="初期化.">init</a>(i_lColMax, i_lRowMax);
+<a name="l00029"></a>00029         }
+<a name="l00030"></a>00030 
+<a name="l00034"></a><a class="code" href="class_matrix_cell.html#a55785983eb78554e172df55812b7b557">00034</a>         <span class="keyword">virtual</span> <a class="code" href="class_matrix_cell.html#a55785983eb78554e172df55812b7b557" title="デストラクタ.">~MatrixCell</a>() { }
+<a name="l00035"></a>00035 
+<a name="l00041"></a>00041     <span class="keywordtype">void</span> <a class="code" href="class_matrix_cell.html#aa5f47cd609b8f5273c7daf8297b20ef6" title="初期化.">init</a>(<span class="keywordtype">long</span> i_lColMax, <span class="keywordtype">long</span> i_lRowMax);
+<a name="l00042"></a>00042 
+<a name="l00048"></a><a class="code" href="class_matrix_cell.html#ab2f03da0c2c58e98757a89d7d7ad23d3">00048</a>     <span class="keywordtype">long</span> <a class="code" href="class_matrix_cell.html#ab2f03da0c2c58e98757a89d7d7ad23d3" title="セルの横最大幅を取得.">getColMax</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_matrix_cell.html#a78eac79ce9aea16886fc05c870697454" title="セルの横最大幅.">m_lColMax</a>; }
+<a name="l00049"></a>00049 
+<a name="l00055"></a><a class="code" href="class_matrix_cell.html#a5727de08741d3d330af58e94831430a2">00055</a>     <span class="keywordtype">long</span> <a class="code" href="class_matrix_cell.html#a5727de08741d3d330af58e94831430a2" title="セルの縦最大幅を取得.">getRowMax</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_matrix_cell.html#aa7b42f6fe566dfdd00555f2973f6b198" title="セルの縦最大幅.">m_lRowMax</a>; }
+<a name="l00056"></a>00056 
+<a name="l00063"></a><a class="code" href="class_matrix_cell.html#aafb94fa662351c8595245e4eaf87e119">00063</a>     <a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a>* <a class="code" href="class_matrix_cell.html#aafb94fa662351c8595245e4eaf87e119" title="セルを取得する.">getCell</a>(<span class="keywordtype">long</span> i_lCol, <span class="keywordtype">long</span> i_lRow)
+<a name="l00064"></a>00064         {
+<a name="l00065"></a>00065                 <a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a>* a_pcCell = this-&gt;<a class="code" href="class_matrix_cell.html#a61df6b87f2e46bd7d4fbb97021f99fb2" title="セルの集合体.">m_vecCellArray</a>[i_lRow][i_lCol];
+<a name="l00066"></a>00066                 <span class="keywordflow">return</span> a_pcCell;
+<a name="l00067"></a>00067         }
+<a name="l00068"></a>00068 
+<a name="l00076"></a><a class="code" href="class_matrix_cell.html#a8e1225d1e4a38a290a8e1e6e1ad0b1ce">00076</a>     <span class="keywordtype">void</span> <a class="code" href="class_matrix_cell.html#a8e1225d1e4a38a290a8e1e6e1ad0b1ce" title="セルの状態を設定する.">setCellState</a>(<span class="keywordtype">long</span> i_lCol, <span class="keywordtype">long</span> i_lRow, <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> i_eState)
+<a name="l00077"></a>00077         {
+<a name="l00078"></a>00078                 <a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a>* a_pcCell = this-&gt;<a class="code" href="class_matrix_cell.html#aafb94fa662351c8595245e4eaf87e119" title="セルを取得する.">getCell</a>(i_lCol, i_lRow);
+<a name="l00079"></a>00079                 a_pcCell-&gt;<a class="code" href="class_cell.html#a6cb44292d5b22e73ce283f3bc56be225" title="自分自身のセルの状態を設定.">setState</a>(i_eState);
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081 
+<a name="l00090"></a><a class="code" href="class_matrix_cell.html#a82407ce68f9e8a747dbf1742ad122274">00090</a>     <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> <a class="code" href="class_matrix_cell.html#a82407ce68f9e8a747dbf1742ad122274" title="セルの状態を取得する.">getCellState</a>(<span class="keywordtype">long</span> i_lCol, <span class="keywordtype">long</span> i_lRow)
+<a name="l00091"></a>00091         {
+<a name="l00092"></a>00092                 <a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a>* a_pcCell = this-&gt;<a class="code" href="class_matrix_cell.html#aafb94fa662351c8595245e4eaf87e119" title="セルを取得する.">getCell</a>(i_lCol, i_lRow);
+<a name="l00093"></a>00093                 <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> a_eState = a_pcCell-&gt;<a class="code" href="class_cell.html#a88b4cc03f827dbb40856c146692a6abf" title="自分自身のセルの状態を取得.">getState</a>();
+<a name="l00094"></a>00094                 <span class="keywordflow">return</span> a_eState;
+<a name="l00095"></a>00095         }
 <a name="l00096"></a>00096 
-<a name="l00097"></a>00097 <span class="keyword">private</span>:
-<a name="l00101"></a><a class="code" href="class_matrix_cell.html#a78eac79ce9aea16886fc05c870697454">00101</a>     <span class="keywordtype">long</span> <a class="code" href="class_matrix_cell.html#a78eac79ce9aea16886fc05c870697454" title="セルの横最大幅.">m_lColMax</a>;
-<a name="l00102"></a>00102 
-<a name="l00106"></a><a class="code" href="class_matrix_cell.html#aa7b42f6fe566dfdd00555f2973f6b198">00106</a>     <span class="keywordtype">long</span> <a class="code" href="class_matrix_cell.html#aa7b42f6fe566dfdd00555f2973f6b198" title="セルの縦最大幅.">m_lRowMax</a>;
-<a name="l00107"></a>00107 
-<a name="l00111"></a><a class="code" href="class_matrix_cell.html#a61df6b87f2e46bd7d4fbb97021f99fb2">00111</a>     std::vector&lt; std::vector &lt;Cell*&gt; &gt; <a class="code" href="class_matrix_cell.html#a61df6b87f2e46bd7d4fbb97021f99fb2" title="セルの集合体.">m_vecCellArray</a>;
+<a name="l00104"></a>00104     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#ad1a6c1803575b4fb6c9bb8d9c0992087" title="全セルの更新を行う.">refreshCell</a>();
+<a name="l00105"></a>00105 
+<a name="l00111"></a>00111     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#ac1628d2d793a0fd04005e5b4e7bf0574" title="Observerパターンの通知.">update</a>(<a class="code" href="class_information.html" title="オブザーバーパターンにおいて通知を行う場合, 通知したい情報">Information</a>* i_pcInformation);
 <a name="l00112"></a>00112 
-<a name="l00120"></a>00120     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#ac2fab249ff6882ad83a20bda9ef0c71d" title="セルを生成する.">makeCell</a>();
-<a name="l00121"></a>00121 
-<a name="l00127"></a>00127     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#a83713b704e825f6d799ee00b6ebcc6f3" title="隣接セルをリンクさせる.">linkNeighborCel</a>();
-<a name="l00128"></a>00128 
-<a name="l00136"></a>00136     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#ac69ab1d5800d9f3a946ec1b7e8247e43" title="隣接セルに自分自身の状態を通知する.">notifyNeighborCell</a>();
-<a name="l00137"></a>00137 
-<a name="l00145"></a>00145     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#a4657d5a6c9ded9e1c579a5ed89534930" title="次世代のセルを計算する.">calcNextGeneration</a>();
-<a name="l00146"></a>00146 
-<a name="l00154"></a><a class="code" href="class_matrix_cell.html#a3fae50c2ba07732d66137dfaab18bf01">00154</a>     <span class="keywordtype">void</span> <a class="code" href="class_matrix_cell.html#a3fae50c2ba07732d66137dfaab18bf01" title="セル横最大幅を設定.">setColMax</a>(<span class="keywordtype">long</span> i_lColMax){ <a class="code" href="class_matrix_cell.html#a78eac79ce9aea16886fc05c870697454" title="セルの横最大幅.">m_lColMax</a> = i_lColMax; }
-<a name="l00155"></a>00155 
-<a name="l00163"></a><a class="code" href="class_matrix_cell.html#a380dd6439189d16dc1ba1df9878881b3">00163</a>     <span class="keywordtype">void</span> <a class="code" href="class_matrix_cell.html#a380dd6439189d16dc1ba1df9878881b3" title="セルの縦最大幅を設定.">setRowMax</a>(<span class="keywordtype">long</span> i_lRowMax){ <a class="code" href="class_matrix_cell.html#aa7b42f6fe566dfdd00555f2973f6b198" title="セルの縦最大幅.">m_lRowMax</a> = i_lRowMax; }
-<a name="l00164"></a>00164 
-<a name="l00165"></a>00165 };
-<a name="l00166"></a>00166 
-<a name="l00167"></a>00167 <span class="preprocessor">#endif  //__MATRIXCELL_H__</span>
+<a name="l00117"></a>00117         std::string <a class="code" href="class_matrix_cell.html#aa694afd21b2d8a4ec7d1074864c31750" title="全セルの状態を表示.">dispAllCellState</a>();
+<a name="l00118"></a>00118 
+<a name="l00123"></a>00123         std::string <a class="code" href="class_matrix_cell.html#a3314a15d4de960a5bd1e36634c3d7356" title="隣接セルの生存数を表示.">dispNeighborAliveCell</a>();
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125 <span class="keyword">private</span>:
+<a name="l00129"></a><a class="code" href="class_matrix_cell.html#a78eac79ce9aea16886fc05c870697454">00129</a>     <span class="keywordtype">long</span> <a class="code" href="class_matrix_cell.html#a78eac79ce9aea16886fc05c870697454" title="セルの横最大幅.">m_lColMax</a>;
+<a name="l00130"></a>00130 
+<a name="l00134"></a><a class="code" href="class_matrix_cell.html#aa7b42f6fe566dfdd00555f2973f6b198">00134</a>     <span class="keywordtype">long</span> <a class="code" href="class_matrix_cell.html#aa7b42f6fe566dfdd00555f2973f6b198" title="セルの縦最大幅.">m_lRowMax</a>;
+<a name="l00135"></a>00135 
+<a name="l00139"></a><a class="code" href="class_matrix_cell.html#a61df6b87f2e46bd7d4fbb97021f99fb2">00139</a>     std::vector&lt; std::vector &lt;Cell*&gt; &gt; <a class="code" href="class_matrix_cell.html#a61df6b87f2e46bd7d4fbb97021f99fb2" title="セルの集合体.">m_vecCellArray</a>;
+<a name="l00140"></a>00140 
+<a name="l00148"></a>00148     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#ac2fab249ff6882ad83a20bda9ef0c71d" title="セルを生成する.">makeCell</a>();
+<a name="l00149"></a>00149 
+<a name="l00155"></a>00155     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#a83542d19b12b1f4ff20e46d5b3fbdaf7" title="隣接セルをリンクさせる.">linkCell</a>();
+<a name="l00156"></a>00156 
+<a name="l00164"></a>00164         <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#a0e4dfd58dfac1fb2b1a9eef9bae97a56" title="隣接セルを設定する.">setNeighborCell</a>(<a class="code" href="class_cell.html" title="細胞（セル）1個をあらわすクラス.">Cell</a>* i_pcTargetCell, <span class="keywordtype">long</span> i_lCol, <span class="keywordtype">long</span> i_lRow);
+<a name="l00165"></a>00165 
+<a name="l00174"></a>00174         <span class="keywordtype">long</span> <a class="code" href="class_matrix_cell.html#a41c05b2e7b9548fc742745204d744e1f" title="境界値をチェックする.">check_region</a>(<span class="keywordtype">long</span> i_lValue, <span class="keywordtype">long</span> i_lMax);
+<a name="l00175"></a>00175 
+<a name="l00183"></a>00183     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#ae707dccd5d61aba0e37669a10ea59a08" title="隣接セルに自分自身の状態を通知する.">sendStateToNeighborCell</a>();
+<a name="l00184"></a>00184 
+<a name="l00192"></a>00192     <span class="keywordtype">bool</span> <a class="code" href="class_matrix_cell.html#a65870f01141141db6788809c27168f17" title="次世代のセルを決定する.">decideNextGeneration</a>();
+<a name="l00193"></a>00193 
+<a name="l00201"></a><a class="code" href="class_matrix_cell.html#a3fae50c2ba07732d66137dfaab18bf01">00201</a>     <span class="keywordtype">void</span> <a class="code" href="class_matrix_cell.html#a3fae50c2ba07732d66137dfaab18bf01" title="セル横最大幅を設定.">setColMax</a>(<span class="keywordtype">long</span> i_lColMax){ this-&gt;<a class="code" href="class_matrix_cell.html#a78eac79ce9aea16886fc05c870697454" title="セルの横最大幅.">m_lColMax</a> = i_lColMax; }
+<a name="l00202"></a>00202 
+<a name="l00210"></a><a class="code" href="class_matrix_cell.html#a380dd6439189d16dc1ba1df9878881b3">00210</a>     <span class="keywordtype">void</span> <a class="code" href="class_matrix_cell.html#a380dd6439189d16dc1ba1df9878881b3" title="セルの縦最大幅を設定.">setRowMax</a>(<span class="keywordtype">long</span> i_lRowMax){ this-&gt;<a class="code" href="class_matrix_cell.html#aa7b42f6fe566dfdd00555f2973f6b198" title="セルの縦最大幅.">m_lRowMax</a> = i_lRowMax; }
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212 };
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214 <span class="preprocessor">#endif  //__MATRIXCELL_H__</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -132,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 3 2013 21:42:51 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Feb 2 2015 22:34:07 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>
