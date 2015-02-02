@@ -2,8 +2,8 @@
  * @file    LifeGameViewOnCurses.h
  * @brief   ライフゲームの表示を管理するクラスの宣言.
  */
-#ifndef __LIFEGAME_DISPLAY_H__
-#define __LIFEGAME_DISPLAY_H__
+#ifndef __LIFEGAME_VIEW_H__
+#define __LIFEGAME_VIEW_H__
 
 #include <curses.h>
 
@@ -136,5 +136,5 @@ private:
     void initDisplay();
 };
 
-#endif  // __LIFEGAME_DISPLAY_H__
+#endif  // __LIFEGAME_VIEW_H__
 
