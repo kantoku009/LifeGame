@@ -58,75 +58,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <a href="_life_game_view_on_curses_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00005"></a>00005 <span class="preprocessor">#ifndef __LIFEGAME_DISPLAY_H__</span>
-<a name="l00006"></a>00006 <span class="preprocessor"></span><span class="preprocessor">#define __LIFEGAME_DISPLAY_H__</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#ifndef __LIFEGAME_VIEW_H__</span>
+<a name="l00006"></a>00006 <span class="preprocessor"></span><span class="preprocessor">#define __LIFEGAME_VIEW_H__</span>
 <a name="l00007"></a>00007 <span class="preprocessor"></span>
 <a name="l00008"></a>00008 <span class="preprocessor">#include &lt;curses.h&gt;</span>
 <a name="l00009"></a>00009 
 <a name="l00010"></a>00010 <span class="preprocessor">#include &quot;../Lib/CellAttribute.h&quot;</span>
-<a name="l00011"></a>00011 
-<a name="l00018"></a><a class="code" href="class_life_game_view_on_curses.html">00018</a> <span class="keyword">class </span><a class="code" href="class_life_game_view_on_curses.html" title="ライフゲームの表示を管理するクラス.">LifeGameViewOnCurses</a>
-<a name="l00019"></a>00019 {
-<a name="l00020"></a>00020 <span class="keyword">public</span>:
-<a name="l00021"></a>00021 
-<a name="l00025"></a><a class="code" href="class_life_game_view_on_curses.html#ab3bcfd2c3c7cbe5bc6659e11b68b5906">00025</a>     <a class="code" href="class_life_game_view_on_curses.html#ab3bcfd2c3c7cbe5bc6659e11b68b5906" title="コンストラクタ.">LifeGameViewOnCurses</a>()
-<a name="l00026"></a>00026         {
-<a name="l00027"></a>00027             this-&gt;<a class="code" href="class_life_game_view_on_curses.html#a24aad239a3f9566bb8fcfb8db2e2c7cc" title="curses初期化.">initDisplay</a>();
-<a name="l00028"></a>00028         }
-<a name="l00029"></a>00029 
-<a name="l00033"></a><a class="code" href="class_life_game_view_on_curses.html#aba0a1d50da911034e578435623b5740d">00033</a>     <span class="keyword">virtual</span> <a class="code" href="class_life_game_view_on_curses.html#aba0a1d50da911034e578435623b5740d" title="デストラクタ.">~LifeGameViewOnCurses</a>()
-<a name="l00034"></a>00034         {
-<a name="l00035"></a>00035                 endwin();               <span class="comment">// curses ライブラリ.</span>
-<a name="l00036"></a>00036         }
-<a name="l00037"></a>00037 
-<a name="l00042"></a><a class="code" href="class_life_game_view_on_curses.html#ae3761e4befcc3d51c98fc1f73ca47459">00042</a>     <span class="keywordtype">long</span> <a class="code" href="class_life_game_view_on_curses.html#ae3761e4befcc3d51c98fc1f73ca47459" title="座標位置 横方向の最大.">getColMax</a>()
-<a name="l00043"></a>00043         {
-<a name="l00044"></a>00044                 <span class="keywordflow">return</span> COLS;
-<a name="l00045"></a>00045         }
-<a name="l00046"></a>00046 
-<a name="l00051"></a><a class="code" href="class_life_game_view_on_curses.html#ac142267b934db18c2dc698d325f73d78">00051</a>     <span class="keywordtype">long</span> <a class="code" href="class_life_game_view_on_curses.html#ac142267b934db18c2dc698d325f73d78" title="座標位置 縦方向の最大.">getRowMax</a>()
-<a name="l00052"></a>00052         {
-<a name="l00053"></a>00053                 <span class="keywordflow">return</span> LINES;
-<a name="l00054"></a>00054         }
-<a name="l00055"></a>00055 
-<a name="l00059"></a><a class="code" href="class_life_game_view_on_curses.html#a3a5c4fa7cc0ed5a29dccdbf48bf9b6c9">00059</a>         <span class="keywordtype">long</span> <a class="code" href="class_life_game_view_on_curses.html#a3a5c4fa7cc0ed5a29dccdbf48bf9b6c9" title="カーソルの位置(x座標)を取得.">getCol</a>()
-<a name="l00060"></a>00060         {
-<a name="l00061"></a>00061                 <span class="keywordtype">int</span> a_iRow, a_iCol;
-<a name="l00062"></a>00062                 getyx(<a class="code" href="class_life_game_view_on_curses.html#ad00f49be520c42f5ce68442723d0b97a" title="cursesのウィンドウ.">m_pWindow</a>, a_iRow, a_iCol);
-<a name="l00063"></a>00063                 <span class="keywordflow">return</span> (a_iCol);
-<a name="l00064"></a>00064         }
-<a name="l00068"></a><a class="code" href="class_life_game_view_on_curses.html#ade130ae745af79b7e64f26070b4de3bc">00068</a>         <span class="keywordtype">long</span> <a class="code" href="class_life_game_view_on_curses.html#ade130ae745af79b7e64f26070b4de3bc" title="カーソルの位置(y座標)を取得.">getRow</a>()
-<a name="l00069"></a>00069         {
-<a name="l00070"></a>00070                 <span class="keywordtype">int</span> a_iRow,a_iCol;
-<a name="l00071"></a>00071                 getyx(<a class="code" href="class_life_game_view_on_curses.html#ad00f49be520c42f5ce68442723d0b97a" title="cursesのウィンドウ.">m_pWindow</a>, a_iRow, a_iCol);
-<a name="l00072"></a>00072                 <span class="keywordflow">return</span> (a_iRow);
-<a name="l00073"></a>00073         }
-<a name="l00074"></a>00074 
-<a name="l00080"></a>00080     <span class="keywordtype">bool</span> <a class="code" href="class_life_game_view_on_curses.html#a0c49b36ca597eefc99109646667cdf5a" title="現カーソル上にセルの状態を描画.">draw</a>(<span class="keywordtype">int</span> i_iCol, <span class="keywordtype">int</span> i_iRow, <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> i_eState);
-<a name="l00081"></a>00081 
-<a name="l00087"></a><a class="code" href="class_life_game_view_on_curses.html#a69b9423b13567fc2b4ca4388f6558b91">00087</a>         <span class="keywordtype">char</span> <a class="code" href="class_life_game_view_on_curses.html#a69b9423b13567fc2b4ca4388f6558b91" title="ユーザーから入力されたコマンドを取得.">getCommand</a>()<span class="keyword"> const</span>
-<a name="l00088"></a>00088 <span class="keyword">        </span>{
-<a name="l00089"></a>00089                 <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(getch());
-<a name="l00090"></a>00090         }
-<a name="l00091"></a>00091 
-<a name="l00097"></a>00097     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#ae63955b609d4ecb7dbf1f144b470c45e" title="カーソルを上へ移動.">moveToUpper</a>();
-<a name="l00098"></a>00098 
-<a name="l00104"></a>00104     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#af0f9eab4f74eb0b3918206d4d06ad9ca" title="カーソルを下へ移動.">moveToLower</a>();
-<a name="l00105"></a>00105 
-<a name="l00111"></a>00111     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#a4f3cdfd11445bcc7c2eabc86f7d5312c" title="カーソルを右へ移動.">moveToRight</a>();
-<a name="l00112"></a>00112 
-<a name="l00118"></a>00118     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#a16d232acbef6deb610ba13ee518b184e" title="カーソルを左へ移動.">moveToLeft</a>();
-<a name="l00119"></a>00119 
-<a name="l00120"></a>00120 <span class="keyword">private</span>:
-<a name="l00124"></a><a class="code" href="class_life_game_view_on_curses.html#a8c3070d625b8953a62f0ffe2b57c3350">00124</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_life_game_view_on_curses.html#a8c3070d625b8953a62f0ffe2b57c3350" title="表示する文字の定義.">m_piDispCharacter</a>[<a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896abdd90fe0c5bf98ef6ad57ec760c7f27e">CellAttribute::CELL_STATE_MAX</a>];
-<a name="l00125"></a>00125 
-<a name="l00131"></a>00131     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#a24aad239a3f9566bb8fcfb8db2e2c7cc" title="curses初期化.">initDisplay</a>();
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;../Lib/MatrixCellAttribute.h&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00019"></a><a class="code" href="class_life_game_view_on_curses.html">00019</a> <span class="keyword">class </span><a class="code" href="class_life_game_view_on_curses.html" title="ライフゲームの表示を管理するクラス.">LifeGameViewOnCurses</a> : <span class="keyword">public</span> <a class="code" href="class_observer.html" title="デザインパターン(オブザーバーパターン) Observer">Observer</a>
+<a name="l00020"></a>00020 {
+<a name="l00021"></a>00021 <span class="keyword">public</span>:
+<a name="l00022"></a>00022 
+<a name="l00026"></a><a class="code" href="class_life_game_view_on_curses.html#ab3bcfd2c3c7cbe5bc6659e11b68b5906">00026</a>     <a class="code" href="class_life_game_view_on_curses.html#ab3bcfd2c3c7cbe5bc6659e11b68b5906" title="コンストラクタ.">LifeGameViewOnCurses</a>()
+<a name="l00027"></a>00027         {
+<a name="l00028"></a>00028             this-&gt;<a class="code" href="class_life_game_view_on_curses.html#a24aad239a3f9566bb8fcfb8db2e2c7cc" title="curses初期化.">initDisplay</a>();
+<a name="l00029"></a>00029         }
+<a name="l00030"></a>00030 
+<a name="l00034"></a><a class="code" href="class_life_game_view_on_curses.html#aba0a1d50da911034e578435623b5740d">00034</a>     <span class="keyword">virtual</span> <a class="code" href="class_life_game_view_on_curses.html#aba0a1d50da911034e578435623b5740d" title="デストラクタ.">~LifeGameViewOnCurses</a>()
+<a name="l00035"></a>00035         {
+<a name="l00036"></a>00036                 endwin();               <span class="comment">// curses ライブラリ.</span>
+<a name="l00037"></a>00037         }
+<a name="l00038"></a>00038 
+<a name="l00043"></a><a class="code" href="class_life_game_view_on_curses.html#ae3761e4befcc3d51c98fc1f73ca47459">00043</a>     <span class="keywordtype">long</span> <a class="code" href="class_life_game_view_on_curses.html#ae3761e4befcc3d51c98fc1f73ca47459" title="座標位置 横方向の最大.">getColMax</a>()
+<a name="l00044"></a>00044         {
+<a name="l00045"></a>00045                 <span class="keywordflow">return</span> COLS;
+<a name="l00046"></a>00046         }
+<a name="l00047"></a>00047 
+<a name="l00052"></a><a class="code" href="class_life_game_view_on_curses.html#ac142267b934db18c2dc698d325f73d78">00052</a>     <span class="keywordtype">long</span> <a class="code" href="class_life_game_view_on_curses.html#ac142267b934db18c2dc698d325f73d78" title="座標位置 縦方向の最大.">getRowMax</a>()
+<a name="l00053"></a>00053         {
+<a name="l00054"></a>00054                 <span class="keywordflow">return</span> LINES;
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056 
+<a name="l00060"></a><a class="code" href="class_life_game_view_on_curses.html#a3a5c4fa7cc0ed5a29dccdbf48bf9b6c9">00060</a>         <span class="keywordtype">long</span> <a class="code" href="class_life_game_view_on_curses.html#a3a5c4fa7cc0ed5a29dccdbf48bf9b6c9" title="カーソルの位置(x座標)を取得.">getCol</a>()
+<a name="l00061"></a>00061         {
+<a name="l00062"></a>00062                 <span class="keywordtype">int</span> a_iRow, a_iCol;
+<a name="l00063"></a>00063                 getyx(<a class="code" href="class_life_game_view_on_curses.html#ad00f49be520c42f5ce68442723d0b97a" title="cursesのウィンドウ.">m_pWindow</a>, a_iRow, a_iCol);
+<a name="l00064"></a>00064                 <span class="keywordflow">return</span> (a_iCol);
+<a name="l00065"></a>00065         }
+<a name="l00069"></a><a class="code" href="class_life_game_view_on_curses.html#ade130ae745af79b7e64f26070b4de3bc">00069</a>         <span class="keywordtype">long</span> <a class="code" href="class_life_game_view_on_curses.html#ade130ae745af79b7e64f26070b4de3bc" title="カーソルの位置(y座標)を取得.">getRow</a>()
+<a name="l00070"></a>00070         {
+<a name="l00071"></a>00071                 <span class="keywordtype">int</span> a_iRow,a_iCol;
+<a name="l00072"></a>00072                 getyx(<a class="code" href="class_life_game_view_on_curses.html#ad00f49be520c42f5ce68442723d0b97a" title="cursesのウィンドウ.">m_pWindow</a>, a_iRow, a_iCol);
+<a name="l00073"></a>00073                 <span class="keywordflow">return</span> (a_iRow);
+<a name="l00074"></a>00074         }
+<a name="l00075"></a>00075 
+<a name="l00081"></a>00081     <span class="keywordtype">bool</span> <a class="code" href="class_life_game_view_on_curses.html#a0c49b36ca597eefc99109646667cdf5a" title="現カーソル上にセルの状態を描画.">draw</a>(<span class="keywordtype">int</span> i_iCol, <span class="keywordtype">int</span> i_iRow, <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> i_eState);
+<a name="l00082"></a>00082 
+<a name="l00088"></a><a class="code" href="class_life_game_view_on_curses.html#a69b9423b13567fc2b4ca4388f6558b91">00088</a>         <span class="keywordtype">char</span> <a class="code" href="class_life_game_view_on_curses.html#a69b9423b13567fc2b4ca4388f6558b91" title="ユーザーから入力されたコマンドを取得.">getCommand</a>()<span class="keyword"> const</span>
+<a name="l00089"></a>00089 <span class="keyword">        </span>{
+<a name="l00090"></a>00090                 <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(getch());
+<a name="l00091"></a>00091         }
+<a name="l00092"></a>00092 
+<a name="l00098"></a>00098     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#ae63955b609d4ecb7dbf1f144b470c45e" title="カーソルを上へ移動.">moveToUpper</a>();
+<a name="l00099"></a>00099 
+<a name="l00105"></a>00105     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#af0f9eab4f74eb0b3918206d4d06ad9ca" title="カーソルを下へ移動.">moveToLower</a>();
+<a name="l00106"></a>00106 
+<a name="l00112"></a>00112     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#a4f3cdfd11445bcc7c2eabc86f7d5312c" title="カーソルを右へ移動.">moveToRight</a>();
+<a name="l00113"></a>00113 
+<a name="l00119"></a>00119     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#a16d232acbef6deb610ba13ee518b184e" title="カーソルを左へ移動.">moveToLeft</a>();
+<a name="l00120"></a>00120 
+<a name="l00127"></a><a class="code" href="class_life_game_view_on_curses.html#a5e74e0ab9bd8d3acf133c57cdb06658e">00127</a>         <span class="keywordtype">bool</span> <a class="code" href="class_life_game_view_on_curses.html#a5e74e0ab9bd8d3acf133c57cdb06658e" title="Subjectから通知を受信.">update</a>(<a class="code" href="class_information.html" title="オブザーバーパターンにおいて通知を行う場合, 通知したい情報">Information</a>* i_pcInformation)
+<a name="l00128"></a>00128         {
+<a name="l00129"></a>00129                 this-&gt;<a class="code" href="class_life_game_view_on_curses.html#ae958a84668c21de37a10fb8275d29723" title="MatrixCellの状態を受け取る.">recieveState</a>(static_cast&lt;MatrixCellAttribute*&gt;(i_pcInformation));
+<a name="l00130"></a>00130                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00131"></a>00131         }
 <a name="l00132"></a>00132 
-<a name="l00136"></a><a class="code" href="class_life_game_view_on_curses.html#ad00f49be520c42f5ce68442723d0b97a">00136</a>     WINDOW* <a class="code" href="class_life_game_view_on_curses.html#ad00f49be520c42f5ce68442723d0b97a" title="cursesのウィンドウ.">m_pWindow</a>;
-<a name="l00137"></a>00137 };
+<a name="l00133"></a>00133 <span class="keyword">private</span>:
+<a name="l00137"></a><a class="code" href="class_life_game_view_on_curses.html#a8c3070d625b8953a62f0ffe2b57c3350">00137</a>         <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_life_game_view_on_curses.html#a8c3070d625b8953a62f0ffe2b57c3350" title="表示する文字の定義.">m_piDispCharacter</a>[<a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896abdd90fe0c5bf98ef6ad57ec760c7f27e">CellAttribute::CELL_STATE_MAX</a>];
 <a name="l00138"></a>00138 
-<a name="l00139"></a>00139 <span class="preprocessor">#endif  // __LIFEGAME_DISPLAY_H__</span>
-<a name="l00140"></a>00140 <span class="preprocessor"></span>
+<a name="l00142"></a><a class="code" href="class_life_game_view_on_curses.html#ad00f49be520c42f5ce68442723d0b97a">00142</a>     WINDOW* <a class="code" href="class_life_game_view_on_curses.html#ad00f49be520c42f5ce68442723d0b97a" title="cursesのウィンドウ.">m_pWindow</a>;
+<a name="l00143"></a>00143 
+<a name="l00149"></a>00149     <span class="keywordtype">void</span> <a class="code" href="class_life_game_view_on_curses.html#a24aad239a3f9566bb8fcfb8db2e2c7cc" title="curses初期化.">initDisplay</a>();
+<a name="l00150"></a>00150 
+<a name="l00158"></a><a class="code" href="class_life_game_view_on_curses.html#ae958a84668c21de37a10fb8275d29723">00158</a>         <span class="keywordtype">bool</span> <a class="code" href="class_life_game_view_on_curses.html#ae958a84668c21de37a10fb8275d29723" title="MatrixCellの状態を受け取る.">recieveState</a>(<a class="code" href="class_matrix_cell_attribute.html" title="MatrixCellの属性情報.">MatrixCellAttribute</a>* i_pcMatrixCellAttribute)
+<a name="l00159"></a>00159         {
+<a name="l00160"></a>00160                 <span class="keywordtype">long</span> a_lCol = i_pcMatrixCellAttribute-&gt;<a class="code" href="class_matrix_cell_attribute.html#ae5b9092bf1d801d8374df669b6f81dfe" title="MatrixCell 横座標を取得.">getCol</a>();
+<a name="l00161"></a>00161                 <span class="keywordtype">long</span> a_lRow = i_pcMatrixCellAttribute-&gt;<a class="code" href="class_matrix_cell_attribute.html#a16686e183527dd068f2b9a5729ff2d4f" title="MatrixCell 縦座標を取得.">getRow</a>();
+<a name="l00162"></a>00162                 <a class="code" href="class_cell_attribute.html#a59a41424e2a28081cc89b273b6421896" title="Cellの状態の定義.">CellAttribute::CELL_STATE</a> a_eState = i_pcMatrixCellAttribute-&gt;<a class="code" href="class_matrix_cell_attribute.html#a53606780c6dd30e800cdddeaaab9cc6a" title="状態を取得.">getState</a>();
+<a name="l00163"></a>00163                 this-&gt;<a class="code" href="class_life_game_view_on_curses.html#a0c49b36ca597eefc99109646667cdf5a" title="現カーソル上にセルの状態を描画.">draw</a>(a_lCol, a_lRow, a_eState);
+<a name="l00164"></a>00164                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00165"></a>00165         }
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167 };
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169 <span class="preprocessor">#endif  // __LIFEGAME_VIEW_H__</span>
+<a name="l00170"></a>00170 <span class="preprocessor"></span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -146,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 2 2015 22:34:07 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 6 2015 22:15:00 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>

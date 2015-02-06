@@ -11,13 +11,14 @@
 
 #include "../Lib/Observer.h"
 #include "../Lib/CellAttribute.h"
+#include "../Lib/MatrixCellAttribute.h"
 #include "Cell.h"
 
 /**
  * @brief   全細胞（全セル）を管理するクラス.
  * @note    Cellを管理する.
  */
-class MatrixCell
+class MatrixCell : public Subject
 {
 public:
     /**
@@ -192,6 +193,15 @@ private:
      *          privateにしておくことで, プログラム実行中に変更不可としている.
      */
     void setColMax(long i_lColMax){ this->m_lColMax = i_lColMax; }
+
+	/**
+	 * @brief   MatrixCellの状態を通知する.
+     * @param   なし.
+     * @return  通知に成功/失敗を返す.
+     * @retval  true    成功.
+     * @retval  false   失敗.
+	 */
+	bool sendState(long i_lCol, long i_lRow, CellAttribute::CELL_STATE a_eState);
 
     /**
      * @brief   セルの縦最大幅を設定.

@@ -10,7 +10,6 @@
 /**
  * @brief   細胞（セル）の属性情報.
  * @note    細胞（セル）が持っている属性.（has-aの関係）.
- * @note    MatrixCellからExpressionCellに情報を受け渡すのにも使用する.
  * @note    受け渡す情報は以下.
  * @note        ・セルの状態.
  */

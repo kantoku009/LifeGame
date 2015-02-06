@@ -5,6 +5,9 @@
 
 #include "LifeGameController.h"
 
+/*******************
+ * コンストラクタ.
+ *******************/
 LifeGameController::LifeGameController()
 {
 	m_ePrevEvent = EV_NONE;
@@ -17,11 +20,18 @@ LifeGameController::LifeGameController()
 	// Modelを生成.
 	m_pcLifeGameModel = new MatrixCell(a_lCol, a_lRow);
 
+	m_pcLifeGameModel->attach(m_pcLifeGameView);
+
 	// セルの初期配置.
 	this->initialPlot();
+	
+	// Modelのセル状態とViewの表示を同期させる.
 	this->syncStateModelToView();
 }
 
+/*****************
+ * デストラクタ.
+ *****************/
 LifeGameController::~LifeGameController()
 {
 	if(m_pcLifeGameModel!= 0) delete m_pcLifeGameModel;
@@ -217,7 +227,6 @@ void LifeGameController::plotCell()
 void LifeGameController::refreshCell()
 {
 	m_pcLifeGameModel->refreshCell();
-	this->syncStateModelToView();
 }
 
 /********************************************

@@ -4,6 +4,7 @@
  */
 #include "MatrixCell.h"
 
+
 #include <iostream>		// デバッグ用.
 #include <sstream>		// デバッグ用.
 #include <string>		// デバッグ用.
@@ -169,6 +170,7 @@ bool MatrixCell::sendStateToNeighborCell()
 bool MatrixCell::decideNextGeneration()
 {
     Cell* a_pcCell = 0;
+	bool a_bIsChanged = false;
 
     for(long a_lRow=0; a_lRow<m_lRowMax; a_lRow++)
     {
@@ -177,11 +179,19 @@ bool MatrixCell::decideNextGeneration()
             a_pcCell = this->getCell(a_lCol, a_lRow);
             // @@ToDo@@
 
-            a_pcCell->decideState();
+            a_bIsChanged = a_pcCell->decideState();
+			if(a_bIsChanged) this->sendState(a_lCol, a_lRow, a_pcCell->getState());
         }
     }
 
     return true;
+}
+
+bool MatrixCell::sendState(long i_lCol, long i_lRow, CellAttribute::CELL_STATE a_eState)
+{
+	MatrixCellAttribute a_cMatrixCellAttribute(i_lCol, i_lRow, a_eState);
+	this->notify(&a_cMatrixCellAttribute);
+	return true;
 }
 
 /******************************************

@@ -65,11 +65,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">LifeGameViewOnCurses Class Reference</div>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="LifeGameViewOnCurses" -->
+<!-- doxytag: class="LifeGameViewOnCurses" --><!-- doxytag: inherits="Observer" -->
 <p>ライフゲームの表示を管理するクラス.  
  <a href="class_life_game_view_on_curses.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_life_game_view_on_curses_8h_source.html">LifeGameViewOnCurses.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for LifeGameViewOnCurses:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_life_game_view_on_curses.png" usemap="#LifeGameViewOnCurses_map" alt=""/>
+  <map id="LifeGameViewOnCurses_map" name="LifeGameViewOnCurses_map">
+<area href="class_observer.html" title="デザインパターン(オブザーバーパターン) Observer" alt="Observer" shape="rect" coords="0,0,150,24"/>
+</map>
+ </div></div>
 
 <p><a href="class_life_game_view_on_curses-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -99,10 +108,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">カーソルを右へ移動.  <a href="#a4f3cdfd11445bcc7c2eabc86f7d5312c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_life_game_view_on_curses.html#a16d232acbef6deb610ba13ee518b184e">moveToLeft</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">カーソルを左へ移動.  <a href="#a16d232acbef6deb610ba13ee518b184e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_life_game_view_on_curses.html#a5e74e0ab9bd8d3acf133c57cdb06658e">update</a> (<a class="el" href="class_information.html">Information</a> *i_pcInformation)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subjectから通知を受信.  <a href="#a5e74e0ab9bd8d3acf133c57cdb06658e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_life_game_view_on_curses.html#a24aad239a3f9566bb8fcfb8db2e2c7cc">initDisplay</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">curses初期化.  <a href="#a24aad239a3f9566bb8fcfb8db2e2c7cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_life_game_view_on_curses.html#ae958a84668c21de37a10fb8275d29723">recieveState</a> (<a class="el" href="class_matrix_cell_attribute.html">MatrixCellAttribute</a> *i_pcMatrixCellAttribute)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">MatrixCellの状態を受け取る.  <a href="#ae958a84668c21de37a10fb8275d29723"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_life_game_view_on_curses.html#ad00f49be520c42f5ce68442723d0b97a">m_pWindow</a></td></tr>
@@ -423,6 +436,68 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae958a84668c21de37a10fb8275d29723"></a><!-- doxytag: member="LifeGameViewOnCurses::recieveState" ref="ae958a84668c21de37a10fb8275d29723" args="(MatrixCellAttribute *i_pcMatrixCellAttribute)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LifeGameViewOnCurses::recieveState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_matrix_cell_attribute.html">MatrixCellAttribute</a> *&#160;</td>
+          <td class="paramname"><em>i_pcMatrixCellAttribute</em></td><td>)</td>
+          <td><code> [inline, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>MatrixCellの状態を受け取る. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MatrixCellAttribute*</td><td>i_pcMatrixCellAttribute MatrixCellの状態. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>結果. </dd></dl>
+<dl><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>成功. </td></tr>
+    <tr><td class="paramname">false</td><td>失敗. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5e74e0ab9bd8d3acf133c57cdb06658e"></a><!-- doxytag: member="LifeGameViewOnCurses::update" ref="a5e74e0ab9bd8d3acf133c57cdb06658e" args="(Information *i_pcInformation)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LifeGameViewOnCurses::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_information.html">Information</a> *&#160;</td>
+          <td class="paramname"><em>i_pcInformation</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Subjectから通知を受信. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Information*</td><td>i_pcInformation MatrixCellの属性. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>成功/失敗. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>MatrixCellAttributeのインスタンスが渡されることを想定している. </dd></dl>
+
+<p>Implements <a class="el" href="class_observer.html#a3084fe044b10ee99701d187922529ec2">Observer</a>.</p>
+
+</div>
+</div>
 <hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="a8c3070d625b8953a62f0ffe2b57c3350"></a><!-- doxytag: member="LifeGameViewOnCurses::m_piDispCharacter" ref="a8c3070d625b8953a62f0ffe2b57c3350" args="[CellAttribute::CELL_STATE_MAX]" -->
 <div class="memitem">
@@ -476,7 +551,7 @@ Static Private Attributes</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 2 2015 22:34:07 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Feb 6 2015 22:15:00 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>
