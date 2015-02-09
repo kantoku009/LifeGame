@@ -25,7 +25,7 @@ Unix系OSにてビルドすることを想定している。
 
 
 実行すると以下のような画面となる。　　
-![](./img_LifeGame.png)
+![](./movie_LifeGame.gif)
 
 このLifeGameは[curses](http://ja.wikipedia.org/wiki/Curses)を利用している。  
 このLifeGame内でのコマンドを以下に示す。  

@@ -43,6 +43,7 @@ LifeGameController::~LifeGameController()
  *****************/
 void LifeGameController::initialPlot()
 {
+	/*
 	// 蜂の巣 (固定物体)
 	m_pcLifeGameModel->setCellState(3,1, CellAttribute::ALIVE);
 	m_pcLifeGameModel->setCellState(4,1, CellAttribute::ALIVE);
@@ -84,6 +85,19 @@ void LifeGameController::initialPlot()
 	m_pcLifeGameModel->setCellState(1,17, CellAttribute::ALIVE);
 	m_pcLifeGameModel->setCellState(2,17, CellAttribute::ALIVE);
 	m_pcLifeGameModel->setCellState(3,17, CellAttribute::ALIVE);
+	*/
+
+	// ペンタデカスロン(振動子)
+	m_pcLifeGameModel->setCellState(35,12, CellAttribute::ALIVE);
+	m_pcLifeGameModel->setCellState(36,12, CellAttribute::ALIVE);
+	m_pcLifeGameModel->setCellState(37,12, CellAttribute::ALIVE);
+	m_pcLifeGameModel->setCellState(38,12, CellAttribute::ALIVE);
+	m_pcLifeGameModel->setCellState(39,12, CellAttribute::ALIVE);
+	m_pcLifeGameModel->setCellState(40,12, CellAttribute::ALIVE);
+	m_pcLifeGameModel->setCellState(41,12, CellAttribute::ALIVE);
+	m_pcLifeGameModel->setCellState(42,12, CellAttribute::ALIVE);
+	m_pcLifeGameModel->setCellState(43,12, CellAttribute::ALIVE);
+	m_pcLifeGameModel->setCellState(44,12, CellAttribute::ALIVE);
 }
 
 /*********************************************************************

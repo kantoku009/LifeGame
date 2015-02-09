@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include "./Controller/LifeGameController.h"
 
-#define DELAY   (1000*100)  // スリープの時間.単位はマイクロ秒.
+#define DELAY   (100*1000)  // スリープの時間.単位はマイクロ秒.
 
 int main(int argc, char* argv[])
 {

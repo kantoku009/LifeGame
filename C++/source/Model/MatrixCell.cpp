@@ -187,6 +187,9 @@ bool MatrixCell::decideNextGeneration()
     return true;
 }
 
+/*******************************
+ * MatrixCellの状態を通知する.
+ *******************************/
 bool MatrixCell::sendState(long i_lCol, long i_lRow, CellAttribute::CELL_STATE a_eState)
 {
 	MatrixCellAttribute a_cMatrixCellAttribute(i_lCol, i_lRow, a_eState);
